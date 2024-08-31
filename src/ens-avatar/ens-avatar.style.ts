@@ -1,6 +1,10 @@
 import { css } from "lit";
 
 export default css`
+  :host {
+    display: flex;
+  }
+
   img {
     width: var(--avatar-size, 3rem);
     height: var(--avatar-size, 3rem);
