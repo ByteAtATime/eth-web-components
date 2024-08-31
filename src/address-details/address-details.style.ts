@@ -20,6 +20,11 @@ export default css`
     font-size: var(--title-font-size, 1rem);
   }
 
+  svg {
+    width: var(--explorer-icon-size, 1rem);
+    height: var(--explorer-icon-size, 1rem);
+  }
+
   a {
     color: inherit;
     text-decoration: inherit;

@@ -1,6 +1,7 @@
 import { customElement, property } from "lit/decorators.js";
 import { html, LitElement } from "lit";
 import addressDetailsStyle from "~/address-details/address-details.style.ts";
+import { openExplorerIcon } from "~/address-details/explorer-icon.ts";
 
 @customElement("address-details")
 export class AddressDetailsComponent extends LitElement {
@@ -26,10 +27,15 @@ export class AddressDetailsComponent extends LitElement {
     const copyAddress = html`<copy-address
       .address=${this.address}
     ></copy-address>`;
+    const openExplorer = html`
+      <a href=${blockExplorerUrl} target="_blank" rel="noopener noreferrer">
+        ${openExplorerIcon}
+      </a>
+    `;
 
     const title = html`<p>
-      <a href=${blockExplorerUrl}>${this.ensName ?? displayAddress}</a>
-      ${this.ensName ? null : copyAddress}
+      ${this.ensName ?? displayAddress} ${this.ensName ? null : copyAddress}
+      ${openExplorer}
     </p>`;
     const description = this.ensName
       ? html`<span> ${displayAddress} ${copyAddress} </span>`

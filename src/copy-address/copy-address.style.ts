@@ -6,10 +6,12 @@ export default css`
     border: none;
     padding: 0;
     cursor: pointer;
+    color: var(--copy-icon-color, currentColor);
   }
 
-  img {
+  svg {
     width: var(--copy-icon-size, 1rem);
     height: var(--copy-icon-size, 1rem);
+    stroke: currentColor;
   }
 `;
