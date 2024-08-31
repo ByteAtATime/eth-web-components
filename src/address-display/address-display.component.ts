@@ -21,6 +21,8 @@ export class AddressDisplayComponent extends LitElement {
   wagmiConfig: Config | null = null;
   @property()
   addressStyle: "long" | "short" = "short";
+  @property({ type: Boolean })
+  clickable = false;
 
   @state()
   private ensName: string | null | undefined = null;
@@ -50,7 +52,7 @@ export class AddressDisplayComponent extends LitElement {
       : null;
 
     return html`
-      <div>
+      <div @click=${this.onClick} class=${this.clickable ? "clickable" : ""}>
         <ens-avatar
           .address=${this.address}
           .avatarUri=${this.ensAvatar}
@@ -93,6 +95,20 @@ export class AddressDisplayComponent extends LitElement {
       return;
     }
     this.ensAvatar = ensAvatar;
+  }
+
+  private onClick() {
+    if (!this.clickable) return;
+
+    const clickEvent = new CustomEvent("address-click", {
+      detail: {
+        address: this.address,
+        ensName: this.ensName,
+        ensAvatar: this.ensAvatar,
+      },
+    });
+
+    this.dispatchEvent(clickEvent);
   }
 }
 

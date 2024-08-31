@@ -12,6 +12,8 @@ const config = createConfig({
 });
 display.wagmiConfig = config;
 
+display.addEventListener("address-click", console.log);
+
 setTimeout(() => {
   display.address = "0x34aA3F359A9D614239015126635CE7732c18fDF3";
 }, 1000);
