@@ -1,0 +1,33 @@
+{
+  "name": "@byteatatime/address-display-lit-test",
+  "version": "0.0.2",
+  "type": "module",
+  "main": "./dist/elements.cjs",
+  "module": "./dist/elements.mjs",
+  "exports": {
+    ".": {
+      "import": "./dist/elements.mjs",
+      "require": "./dist/elements.cjs"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "dev": "vite --config ./playground/vite.config.ts",
+    "build": "tsc && vite build",
+    "preview": "vite preview",
+    "format": "prettier --write ."
+  },
+  "dependencies": {
+    "@wagmi/core": "^2.13.4",
+    "blo": "^1.2.0",
+    "lit": "^3.2.0",
+    "viem": "^2.21.0"
+  },
+  "devDependencies": {
+    "prettier": "^3.3.3",
+    "typescript": "^5.5.3",
+    "vite": "^5.4.1"
+  }
+}
