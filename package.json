@@ -1,6 +1,6 @@
 {
   "name": "@byteatatime/address-display-lit-test",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "type": "module",
   "main": "./dist/elements.cjs",
   "module": "./dist/elements.mjs",
@@ -17,7 +17,8 @@
     "dev": "vite --config ./playground/vite.config.ts",
     "build": "tsc && vite build",
     "preview": "vite preview",
-    "format": "prettier --write ."
+    "format": "prettier --write .",
+    "prepublish": "npm run build"
   },
   "dependencies": {
     "@wagmi/core": "^2.13.4",
