@@ -1,6 +1,6 @@
 {
   "name": "@byteatatime/address-display-lit-test",
-  "version": "0.0.4",
+  "version": "0.1.0",
   "type": "module",
   "main": "./dist/elements.cjs",
   "module": "./dist/elements.mjs",
