@@ -1,5 +1,5 @@
 {
-  "name": "@byteatatime/address-display-lit-test",
+  "name": "@byteatatime/address-display",
   "version": "0.1.0",
   "type": "module",
   "main": "./dist/elements.cjs",
