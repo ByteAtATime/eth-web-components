@@ -44,3 +44,9 @@ export class AddressDetailsComponent extends LitElement {
     return html`<div>${title} ${description}</div>`;
   }
 }
+
+declare global {
+  interface HTMLElementTagNameMap {
+    "address-details": AddressDetailsComponent;
+  }
+}

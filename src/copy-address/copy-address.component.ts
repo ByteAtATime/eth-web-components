@@ -28,3 +28,9 @@ export class CopyAddressComponent extends LitElement {
     }, 1_500);
   }
 }
+
+declare global {
+  interface HTMLElementTagNameMap {
+    "copy-address": CopyAddressComponent;
+  }
+}
