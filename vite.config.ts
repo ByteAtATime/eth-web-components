@@ -22,4 +22,12 @@ export default defineConfig({
     },
   },
   plugins: [dtsPlugin({ rollupTypes: true })],
+  test: {
+    browser: {
+      enabled: true,
+      provider: "playwright",
+      name: "chromium",
+      headless: true,
+    },
+  },
 });

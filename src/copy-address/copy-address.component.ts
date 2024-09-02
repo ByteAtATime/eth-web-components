@@ -23,6 +23,12 @@ export class CopyAddressComponent extends LitElement {
   private async copyAddress() {
     await navigator.clipboard.writeText(this.address);
     this.addressCopied = true;
+
+    const copiedEvent = new CustomEvent("address-copied", {
+      detail: { address: this.address },
+    });
+    this.dispatchEvent(copiedEvent);
+
     setTimeout(() => {
       this.addressCopied = false;
     }, 1_500);
