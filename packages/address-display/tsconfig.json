@@ -29,6 +29,6 @@
     ]
   },
   "include": [
-    "packages/address-display/src"
+    "src"
   ]
 }

@@ -1,4 +1,4 @@
-import "../index";
+import "../index.ts";
 
 import { CopyAddressComponent } from "~/copy-address/copy-address.component.ts";
 import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";

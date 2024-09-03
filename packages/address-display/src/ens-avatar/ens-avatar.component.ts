@@ -2,7 +2,7 @@ import { html, LitElement } from "lit";
 import { customElement, property } from "lit/decorators.js";
 import { blo } from "blo";
 import { Address } from "viem";
-import ensAvatarStyle from "~/ens-avatar/ens-avatar.style.ts";
+import ensAvatarStyle from "./ens-avatar.style.ts";
 
 @customElement("ens-avatar")
 export class EnsAvatarComponent extends LitElement {

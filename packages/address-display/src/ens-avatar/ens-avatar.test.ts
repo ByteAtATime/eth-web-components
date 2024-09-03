@@ -1,5 +1,5 @@
 import { afterEach, beforeEach, describe, expect, it } from "vitest";
-import "../index";
+import "../index.ts";
 import { EnsAvatarComponent } from "~/ens-avatar/ens-avatar.component.ts";
 import { blo } from "blo";
 

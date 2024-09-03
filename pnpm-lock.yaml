@@ -7,6 +7,12 @@ settings:
 importers:
 
   .:
+    devDependencies:
+      vitest:
+        specifier: ^2.0.5
+        version: 2.0.5(@types/node@22.5.2)(@vitest/browser@2.0.5)
+
+  packages/address-display:
     dependencies:
       '@wagmi/core':
         specifier: ^2.13.4
@@ -42,9 +48,22 @@ importers:
       vite-plugin-dts:
         specifier: ^4.1.0
         version: 4.1.0(@types/node@22.5.2)(rollup@4.21.1)(typescript@5.5.4)(vite@5.4.2(@types/node@22.5.2))
-      vitest:
-        specifier: ^2.0.5
-        version: 2.0.5(@types/node@22.5.2)(@vitest/browser@2.0.5)
+
+  playgrounds/address-display:
+    dependencies:
+      '@byteatatime/address-display':
+        specifier: workspace:*
+        version: link:../../packages/address-display
+      '@wagmi/core':
+        specifier: ^2.13.4
+        version: 2.13.4(react@18.3.1)(typescript@5.5.4)(viem@2.21.0(typescript@5.5.4))
+    devDependencies:
+      typescript:
+        specifier: ^5.5.3
+        version: 5.5.4
+      vite:
+        specifier: ^5.4.1
+        version: 5.4.2(@types/node@22.5.2)
 
 packages:
 

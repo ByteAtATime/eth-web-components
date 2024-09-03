@@ -1,5 +1,5 @@
 import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
-import "../index";
+import "../index.ts";
 import { AddressDisplayComponent } from "~/address-display/address-display.component.ts";
 import { createConfig, http } from "@wagmi/core";
 import { mainnet } from "@wagmi/core/chains";
