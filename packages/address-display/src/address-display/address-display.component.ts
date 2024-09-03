@@ -1,8 +1,9 @@
-import { Config, getAccount, getEnsAvatar, getEnsName } from "@wagmi/core";
+import { Config, getAccount } from "@wagmi/core";
 import { LitElement, PropertyValues, html } from "lit";
 import { customElement, property, state } from "lit/decorators.js";
 import { Address, getAddress } from "viem";
 import addressDisplayStyle from "~/address-display/address-display.style.ts";
+import { IWagmiProvider, WagmiProvider } from "~~/wagmi-provider.ts";
 
 @customElement("address-display")
 export class AddressDisplayComponent extends LitElement {
@@ -19,6 +20,8 @@ export class AddressDisplayComponent extends LitElement {
 
   @property()
   wagmiConfig: Config | null = null;
+  @property()
+  wagmiProvider: IWagmiProvider | null = null;
   @property()
   addressStyle: "long" | "short" = "short";
   @property({ type: Boolean })
@@ -38,6 +41,14 @@ export class AddressDisplayComponent extends LitElement {
       this.ensName = undefined;
 
       this.updateEnsData().then();
+    }
+
+    if (changedProperties.has("wagmiConfig")) {
+      if (this.wagmiProvider) {
+        this.wagmiProvider.updateConfig(this.wagmiConfig);
+      } else {
+        this.wagmiProvider = new WagmiProvider(this.wagmiConfig);
+      }
     }
   }
 
@@ -69,16 +80,14 @@ export class AddressDisplayComponent extends LitElement {
   }
 
   private async updateEnsData() {
-    if (!this.wagmiConfig || !this.address) {
+    if (!this.wagmiConfig || !this.wagmiProvider || !this.address) {
       return;
     }
 
     this.ensName = undefined;
     this.ensAvatar = undefined;
 
-    const ensName = await getEnsName(this.wagmiConfig, {
-      address: this.address,
-    });
+    const ensName = await this.wagmiProvider.getEnsName(this.address);
 
     if (!ensName) {
       this.ensName = null;
@@ -86,9 +95,7 @@ export class AddressDisplayComponent extends LitElement {
     }
     this.ensName = ensName;
 
-    const ensAvatar = await getEnsAvatar(this.wagmiConfig, {
-      name: this.ensName,
-    });
+    const ensAvatar = await this.wagmiProvider.getEnsAvatar(this.ensName);
 
     if (!ensAvatar) {
       this.ensAvatar = null;

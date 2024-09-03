@@ -22,7 +22,8 @@
 
     "paths": {
       "~/*": ["./src/*"],
-      "@/*": ["./playground/*"]
+      "@/*": ["./playground/*"],
+      "~~/*": ["../common/*"]
     },
     "types": ["@vitest/browser/providers/playwright"]
   },
