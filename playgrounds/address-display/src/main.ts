@@ -19,6 +19,14 @@ Without config:
 <address-display address="0x34aA3F359A9D614239015126635CE7732c18fDF3"></address-display>
 `;
 
-document.querySelectorAll("address-display.withConfig").forEach((display) => {
-  display.wagmiConfig = config;
-});
+setTimeout(() => {
+  document.querySelectorAll("address-display.withConfig").forEach((display) => {
+    display.wagmiConfig = config;
+  });
+}, 1500);
+
+// setTimeout(() => {
+//   document.querySelectorAll("address-display").forEach((display) => {
+//     display.address = "0x598cb95773D9b66a27a5780DB5EED2d018685879";
+//   });
+// }, 1500);

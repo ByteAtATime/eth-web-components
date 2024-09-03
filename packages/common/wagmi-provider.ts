@@ -1,7 +1,11 @@
+// TODO: What is a good way to share this file between packages?
+// TODO: Currently, I have installed the `@wagmi/core` and `viem` packages in root monorepo
+
 import { Config, getEnsAvatar, getEnsName } from "@wagmi/core";
+import { Address } from "viem";
 
 export interface IWagmiProvider {
-  getEnsName: (address: string) => Promise<string | null>;
+  getEnsName: (address: Address) => Promise<string | null>;
   getEnsAvatar: (name: string) => Promise<string | null>;
 
   updateConfig: (config: Config) => void;
@@ -10,7 +14,7 @@ export interface IWagmiProvider {
 export class WagmiProvider implements IWagmiProvider {
   constructor(private config: Config) {}
 
-  async getEnsName(address: string): Promise<string | null> {
+  async getEnsName(address: Address): Promise<string | null> {
     return await getEnsName(this.config, { address });
   }
 

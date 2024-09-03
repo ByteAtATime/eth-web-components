@@ -44,6 +44,8 @@ export class AddressDisplayComponent extends LitElement {
     }
 
     if (changedProperties.has("wagmiConfig")) {
+      if (!this.wagmiConfig) return;
+
       if (this.wagmiProvider) {
         this.wagmiProvider.updateConfig(this.wagmiConfig);
       } else {
