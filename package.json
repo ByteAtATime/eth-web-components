@@ -1,9 +1,6 @@
 {
   "version": "0.2.0",
   "type": "module",
-  "files": [
-    "dist"
-  ],
   "scripts": {
     "dev:address-display": "pnpm --filter ./playgrounds/address-display dev",
     "build": "pnpm run --r --filter \"./packages/**\" build",

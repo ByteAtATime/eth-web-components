@@ -2,6 +2,9 @@
   "name": "@byteatatime/address-display",
   "version": "0.1.3",
   "type": "module",
+  "files": [
+    "dist"
+  ],
   "main": "./dist/elements.cjs",
   "module": "./dist/elements.mjs",
   "exports": {
