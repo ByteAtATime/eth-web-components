@@ -24,11 +24,7 @@
       "~/*": ["./src/*"],
       "@/*": ["./playground/*"]
     },
-    "types": [
-      "@vitest/browser/providers/playwright"
-    ]
+    "types": ["@vitest/browser/providers/playwright"]
   },
-  "include": [
-    "packages/address-display/src"
-  ]
+  "include": ["packages/address-display/src"]
 }
