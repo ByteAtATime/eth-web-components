@@ -4,9 +4,11 @@
     "dev:address-display": "pnpm --filter ./playgrounds/address-display dev",
     "build": "pnpm run --r --filter \"./packages/**\" build",
     "format": "prettier --write .",
-    "test": "vitest"
+    "test": "vitest",
+    "prepare": "husky"
   },
   "devDependencies": {
+    "husky": "^9.1.5",
     "vitest": "^2.0.5"
   },
   "dependencies": {
