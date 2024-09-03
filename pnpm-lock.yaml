@@ -20,9 +20,6 @@ importers:
       blo:
         specifier: ^1.2.0
         version: 1.2.0
-      lit:
-        specifier: ^3.2.0
-        version: 3.2.0
     devDependencies:
       '@testing-library/dom':
         specifier: ^10.4.0
@@ -30,6 +27,9 @@ importers:
       '@vitest/browser':
         specifier: ^2.0.5
         version: 2.0.5(playwright@1.46.1)(typescript@5.5.4)(vitest@2.0.5)
+      lit:
+        specifier: ^3.2.0
+        version: 3.2.0
       playwright:
         specifier: ^1.46.1
         version: 1.46.1
