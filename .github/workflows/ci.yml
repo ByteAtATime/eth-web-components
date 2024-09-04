@@ -47,10 +47,12 @@ jobs:
             ~/.cache/ms-playwright
           key: ${{ runner.os }}-playwright-${{ env.PLAYWRIGHT_VERSION }}
 
-      - run: npx playwright install --with-deps
+      - name: Install playwright browsers
+        run: npx playwright install --with-deps
         if: steps.playwright-cache.outputs.cache-hit != 'true'
 
-      - run: npx playwright install-deps
+      - name: Install playwright dependencies
+        run: npx playwright install-deps
         if: steps.playwright-cache.outputs.cache-hit == 'true'
 
       - name: Run tests on staged files with Vitest
