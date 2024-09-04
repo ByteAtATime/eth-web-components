@@ -9,6 +9,7 @@
   },
   "devDependencies": {
     "husky": "^9.1.5",
+    "playwright": "^1.46.1",
     "vitest": "^2.0.5"
   },
   "dependencies": {
